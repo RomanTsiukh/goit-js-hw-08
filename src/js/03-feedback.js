@@ -27,10 +27,12 @@ if(localStorage.getItem(key)) {
  // Додавання слухача на submit
 ref.form.addEventListener('submit', onFormSubmit)
 function onFormSubmit (e) {
-    e.preventDefault(); /* заборона перезавантаження при submit */
+    e.preventDefault();  /* заборона перезавантаження при submit */
     const object = JSON.parse(localStorage.getItem(key))
     console.log(object)
     
-    localStorage.clear() /* очищення при submit */
+    localStorage.clear();      /* очищення сховища при submit */
+    ref.input.value = "";      /* очищення input при submit */
+    ref.textarea.value = "";   /* очищення textarea при submit */
 }
 
